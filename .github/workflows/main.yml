@@ -1,0 +1,14 @@
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+    - run: |
+        export CHOOSENIM_CHOOSE_VERSION="1.0.2"
+        curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
+        sh init.sh -y
+    - run: |
+        nimble test -c
