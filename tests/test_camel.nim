@@ -20,3 +20,5 @@ suite "camel":
   test "snake -> camel":
     check camel("change_my_case") == "changeMyCase"
 
+  test "doesn't cut numbers":
+    check camel("changeMyCase2") == "changeMyCase2"

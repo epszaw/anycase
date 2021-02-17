@@ -20,3 +20,5 @@ suite "pascal":
   test "snake -> pascal":
     check pascal("change_my_case") == "ChangeMyCase"
 
+  test "doesn't cut numbers":
+    check camel("ChangeMyCase2") == "ChangeMyCase2"

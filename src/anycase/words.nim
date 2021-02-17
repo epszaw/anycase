@@ -3,7 +3,7 @@ from strutils import count, toLowerAscii
 from sequtils import map
 
 proc splitByUpperChars*(str: string): seq[string] =
-  let parts = findAll(str, re"(^[a-z][a-z]+|[A-Z][a-z]+)")
+  let parts = findAll(str, re"(^[a-z0-9][a-z0-9]+|[A-Z0-9][a-z0-9]+)")
 
   return map(parts, toLowerAscii)
 
