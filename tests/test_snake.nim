@@ -21,4 +21,4 @@ suite "snake":
     check snake("change_my_case") == "change_my_case"
 
   test "doesn't cut numbers":
-    check camel("change_my_case_2") == "change_my_case_2"
+    check snake("change_my_case_2") == "change_my_case_2"

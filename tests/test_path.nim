@@ -21,4 +21,4 @@ suite "path":
     check path("change_my_case") == "change/my/case"
 
   test "doesn't cut numbers":
-    check camel("change/my/case/2") == "change/my/case/2"
+    check path("change/my/case/2") == "change/my/case/2"

@@ -21,4 +21,4 @@ suite "pascal":
     check pascal("change_my_case") == "ChangeMyCase"
 
   test "doesn't cut numbers":
-    check camel("ChangeMyCase2") == "ChangeMyCase2"
+    check pascal("ChangeMyCase2") == "ChangeMyCase2"
