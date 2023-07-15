@@ -20,5 +20,20 @@ suite "camel":
   test "snake -> camel":
     check camel("change_my_case") == "changeMyCase"
 
+  test "pascalSnake -> camel":
+    check camel("Change_My_Case") == "changeMyCase"
+
+  test "screamingSnake -> camel":
+    check camel("CHANGE_MY_CASE") == "changeMyCase"
+
+  test "cobol -> camel":
+    check camel("CHANGE-MY-CASE") == "changeMyCase"
+
+  test "dot -> camel":
+    check camel("change.my.case") == "changeMyCase"
+
+  test "train -> camel":
+    check camel("Change-My-Case") == "changeMyCase"
+
   test "doesn't cut numbers":
     check camel("changeMyCase2") == "changeMyCase2"
