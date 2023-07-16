@@ -11,20 +11,30 @@
 import anycase
 
 camel("any case")   # "anyCase"
+cobol("any case")   # "ANY-CASE"
+dot("any case")   # "any.case"
 kebab("any case")   # "any-case"
 pascal("any case")  # "AnyCase"
+pascalSnake("any case")  # "Any_Case"
 path("any case")    # "any/case"
+screamingSnake("any case")  # "ANY_CASE"
 snake("any case")   # "any_case"
+train("any case")   # "Any-Case"
 plain("any-case")   # "any case"
 ```
 
 ## Supported cases
 
 - `camel`
+- `cobol`
+- `dot`
 - `kebab`
+- `pascal snake`
 - `pascal`
 - `path`
+- `screaming snake`
 - `snake`
+- `train`
 - `plain`
 
 If you don't see any case – feel free to open issue or pull request.

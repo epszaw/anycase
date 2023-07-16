@@ -20,5 +20,20 @@ suite "kebab":
   test "snake -> kebab":
     check kebab("change_my_case") == "change-my-case"
 
+  test "pascalSnake -> kebab":
+    check kebab("Change_My_Case") == "change-my-case"
+
+  test "screamingSnake -> kebab":
+    check kebab("CHANGE_MY_CASE") == "change-my-case"
+
+  test "cobol -> kebab":
+    check kebab("CHANGE-MY-CASE") == "change-my-case"
+
+  test "dot -> kebab":
+    check kebab("change.my.case") == "change-my-case"
+
+  test "train -> kebab":
+    check kebab("Change-My-Case") == "change-my-case"
+
   test "doesn't cut numbers":
     check kebab("change-my-case-2") == "change-my-case-2"

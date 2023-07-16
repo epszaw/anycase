@@ -1,13 +1,23 @@
 import anycase/camel
-import anycase/pascal
-import anycase/snake
+import anycase/cobol
+import anycase/dot
 import anycase/kebab
+import anycase/pascal
+import anycase/pascal_snake
 import anycase/path
 import anycase/plain
+import anycase/screaming_snake
+import anycase/snake
+import anycase/train
 
 export camel
-export pascal
-export snake
+export cobol
+export dot
 export kebab
+export pascal
+export pascalSnake
 export path
 export plain
+export screamingSnake
+export snake
+export train

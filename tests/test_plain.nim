@@ -20,5 +20,20 @@ suite "plain":
   test "snake -> plain":
     check plain("change_my_case") == "change my case"
 
+  test "pascalSnake -> plain":
+    check plain("Change_My_Case") == "change my case"
+
+  test "screamingSnake -> plain":
+    check plain("CHANGE_MY_CASE") == "change my case"
+
+  test "cobol -> plain":
+    check plain("CHANGE-MY-CASE") == "change my case"
+
+  test "dot -> plain":
+    check plain("change.my.case") == "change my case"
+
+  test "train -> plain":
+    check plain("Change-My-Case") == "change my case"
+
   test "doesn't cut numbers":
     check plain("change my case 2") == "change my case 2"

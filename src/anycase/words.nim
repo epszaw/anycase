@@ -8,9 +8,9 @@ proc splitByUpperChars*(str: string): seq[string] =
   return map(parts, toLowerAscii)
 
 proc words*(str: string): seq[string] =
-  let parts = split(str, re"(-|_|/|\s)")
+  let parts = split(str, re"(-|_|/|\.|\s)")
 
   if parts.len == 1:
     return splitByUpperChars(str)
 
-  return parts
+  return map(parts, toLowerAscii)
