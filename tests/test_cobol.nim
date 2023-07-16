@@ -37,3 +37,8 @@ suite "cobol":
 
   test "doesn't cut numbers":
     check cobol("change_my_case_2") == "CHANGE-MY-CASE-2"
+
+  test "single character tokens":
+    check cobol("c") == "C"
+    check cobol("C") == "C"
+    check cobol("CMC") == "C-M-C"

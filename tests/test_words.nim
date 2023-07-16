@@ -37,3 +37,28 @@ suite "words":
 
   test "doesn't cut numbers":
     check words("change my case 2") == @["change", "my", "case", "2"]
+    check words("2 change my case") == @["2", "change", "my", "case"]
+
+  test "skip empty tokens":
+    check words(" change   my  case  ") == @["change", "my", "case"]
+    check words("change.-my  _case") == @["change", "my", "case"]
+    check words("change..my--case") == @["change", "my", "case"]
+    check words("--change..my--case.") == @["change", "my", "case"]
+    check words("  ChangeMyCase---") == @["change", "my", "case"]
+
+  test "single character":
+    check words("c") == @["c"]
+    check words("C") == @["c"]
+
+  test "two letter strings":
+    check words("cm") == @["cm"]
+    check words("Cm") == @["cm"]
+    check words("cM") == @["c", "m"]
+    check words("CM") == @["c", "m"]
+
+  test "upper ending strings":
+    check words("CM") == @["c", "m"]
+    check words("ChangeM") == @["change", "m"]
+    check words("changeM") == @["change", "m"]
+    check words("changeMyC") == @["change", "my", "c"]
+    check words("changeMyCASE") == @["change", "my", "c", "a", "s", "e"]

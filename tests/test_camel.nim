@@ -37,3 +37,8 @@ suite "camel":
 
   test "doesn't cut numbers":
     check camel("changeMyCase2") == "changeMyCase2"
+
+  test "single character tokens":
+    check camel("c") == "c"
+    check camel("C") == "c"
+    check camel("CMC") == "cMC"

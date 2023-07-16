@@ -37,3 +37,8 @@ suite "path":
 
   test "doesn't cut numbers":
     check path("change/my/case/2") == "change/my/case/2"
+
+  test "single character tokens":
+    check path("c") == "c"
+    check path("C") == "c"
+    check path("CMC") == "c/m/c"

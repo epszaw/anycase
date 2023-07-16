@@ -37,3 +37,8 @@ suite "pascalSnake":
 
   test "doesn't cut numbers":
     check pascalSnake("change_my_case_2") == "Change_My_Case_2"
+
+  test "single character tokens":
+    check pascalSnake("c") == "C"
+    check pascalSnake("C") == "C"
+    check pascalSnake("CMC") == "C_M_C"
