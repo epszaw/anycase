@@ -37,3 +37,8 @@ suite "dot":
 
   test "doesn't cut numbers":
     check dot("change/my/case/2") == "change.my.case.2"
+
+  test "single character tokens":
+    check dot("c") == "c"
+    check dot("C") == "c"
+    check dot("CMC") == "c.m.c"

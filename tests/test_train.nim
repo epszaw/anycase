@@ -37,3 +37,8 @@ suite "train":
 
   test "doesn't cut numbers":
     check train("change_my_case_2") == "Change-My-Case-2"
+
+  test "single character tokens":
+    check train("c") == "C"
+    check train("C") == "C"
+    check train("CMC") == "C-M-C"

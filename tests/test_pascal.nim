@@ -37,3 +37,8 @@ suite "pascal":
 
   test "doesn't cut numbers":
     check pascal("ChangeMyCase2") == "ChangeMyCase2"
+
+  test "single character tokens":
+    check pascal("c") == "C"
+    check pascal("C") == "C"
+    check pascal("CMC") == "CMC"

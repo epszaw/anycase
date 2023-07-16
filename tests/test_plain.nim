@@ -37,3 +37,8 @@ suite "plain":
 
   test "doesn't cut numbers":
     check plain("change my case 2") == "change my case 2"
+
+  test "single character tokens":
+    check plain("c") == "c"
+    check plain("C") == "c"
+    check plain("CMC") == "c m c"

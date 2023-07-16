@@ -37,3 +37,8 @@ suite "snake":
 
   test "doesn't cut numbers":
     check snake("change_my_case_2") == "change_my_case_2"
+
+  test "single character tokens":
+    check snake("c") == "c"
+    check snake("C") == "c"
+    check snake("CMC") == "c_m_c"

@@ -1,16 +1,17 @@
 from re import split, re, findAll
-from strutils import count, toLowerAscii
-from sequtils import map
+from strutils import toLowerAscii
+from sequtils import map, filterIt
 
-proc splitByUpperChars*(str: string): seq[string] =
-  let parts = findAll(str, re"(^[a-z0-9][a-z0-9]+|[A-Z0-9][a-z0-9]+)")
+proc splitBySymbols(str: string): seq[string] =
+  return split(str, re"(-|_|\/|\.|\s)").filterIt(it != "")
 
-  return map(parts, toLowerAscii)
+proc splitByUpperChars(str: string): seq[string] =
+  return findAll(str, re"(^[a-z0-9]+|[A-Z0-9][a-z0-9]*)")
 
 proc words*(str: string): seq[string] =
-  let parts = split(str, re"(-|_|/|\.|\s)")
+  var parts = splitBySymbols(str)
 
   if parts.len == 1:
-    return splitByUpperChars(str)
+    parts = splitByUpperChars(str)
 
   return map(parts, toLowerAscii)

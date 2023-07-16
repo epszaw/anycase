@@ -37,3 +37,8 @@ suite "kebab":
 
   test "doesn't cut numbers":
     check kebab("change-my-case-2") == "change-my-case-2"
+
+  test "single character tokens":
+    check kebab("c") == "c"
+    check kebab("C") == "c"
+    check kebab("CMC") == "c-m-c"
